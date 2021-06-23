@@ -1,0 +1,12 @@
+export const BACKSPACE = 8
+export const ENTER = 13
+export const ESCAPE = 27
+export const ARROW_UP = 38
+export const ARROW_DOWN = 40
+export const ARROW_LEFT = 37
+export const ARROW_RIGHT = 39
+export const CTRL = 17
+export const CMD = 91
+export const PLUS = 29
+export const MINUS = 47
+export const SPACE = 32

@@ -1,0 +1,2 @@
+export const SET_POPUP_MESSAGE = 'app/SET_POPUP_MESSAGE'
+export const CLEAN_POPUP_MESSAGE = 'app/CLEAN_POPUP_MESSAGE'

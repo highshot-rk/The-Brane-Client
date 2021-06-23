@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Fixed Path Utils expandedRelatives should identify main branch and branch offs 1`] = `
+Object {
+  "branchOffs": Array [
+    Object {
+      "_id": "1",
+      "branchOut": true,
+      "title": "Science",
+    },
+  ],
+  "mainBranchNodes": Array [
+    Object {
+      "_id": "0",
+      "branchOffs": Array [],
+      "title": "Humanity",
+    },
+    Object {
+      "_id": "2",
+      "branchOffs": Array [],
+      "title": "Gravity",
+    },
+  ],
+}
+`;

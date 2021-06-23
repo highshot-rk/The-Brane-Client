@@ -1,0 +1,3 @@
+export const UPDATE_TAG_FILTERS = 'app/FilterMenu/UPDATE_TAG_FILTERS'
+export const UPDATE_FRAME_REFERENCE = 'app/FilterMenu/UPDATE_FILTER_REFERENCE'
+export const UPDATE_SHOW_ON_ORBIT = 'app/FilterMenu/UPDATE_SHOW_ON_ORBIT'

@@ -1,0 +1,10 @@
+<svg width="22" height="22" xmlns="http://www.w3.org/2000/svg">
+  <g stroke="#54A1D3" fill="none" fill-rule="evenodd">
+    <circle cx="10" cy="10" r="10" stroke-width=".6" transform="translate(1 1)"/>
+    <g transform="rotate(-45 20.39619357 3.75061228)" stroke-width=".5">
+      <circle cx="2.5" cy="2.5" r="2.5"/>
+      <circle cx="14.5" cy="2.5" r="2.5"/>
+      <path d="M5.23147578 2.86666667h6.53258412" stroke-linecap="square"/>
+    </g>
+  </g>
+</svg>

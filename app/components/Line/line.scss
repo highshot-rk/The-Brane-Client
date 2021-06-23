@@ -1,0 +1,53 @@
+.fixed-path-link {
+  animation-name: LineFadeIn;
+  animation-fill-mode: both;
+  animation-duration: 0.1s;
+  opacity: 0;
+
+  &.fixed-path-link--hide {
+    animation-name: LineFadeIn_2;
+    animation-direction: reverse;
+
+    .fixed-path-link__arrow {
+      opacity: 0 !important;
+    }
+  }
+
+  .fixed-path-link__line {
+    stroke: transparentize($c01-light, 0.8);
+  }
+
+  &.fixed-path-link--menu-shown .fixed-path-link__line {
+    stroke: transparentize($c01-light, 1 - (0.2 * 0.4));
+  }
+}
+
+.fixed-path-link__arrow {
+  cursor: pointer;
+  opacity: 0;
+  transition: 0.3s opacity;
+
+  &:hover {
+    opacity: 1;
+  }
+
+  &.fixed-path-link__arrow--near-focused {
+    opacity: 1;
+  }
+}
+
+.fixed-path-link:hover {
+  .fixed-path-link__arrow {
+    opacity: 1;
+  }
+}
+
+@include duplicateAnimation('LineFadeIn') {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}

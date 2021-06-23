@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22">
+  <g opacity=".8">
+    <circle cx="11" cy="11" r="8" fill="none" stroke="#000" stroke-width="2"/>
+    <text x="10.7" y="16.5" font-size="14" font-family="Times New Roman, Times, serif"
+      text-anchor="middle" font-weight="600" font-style="italic">
+      i
+    </text>
+  </g>
+</svg>

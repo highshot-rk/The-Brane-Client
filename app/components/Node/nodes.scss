@@ -1,0 +1,253 @@
+.node {
+  transition: 1s transform;
+
+  .node__center-node {
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 22px;
+    transition: 0.5s transform;
+
+    circle {
+      animation-name: node_fadeIn;
+      animation-fill-mode: both;
+      transition: 0.5s transform;
+    }
+
+    .node__center__node-count {
+      font-size: 14px;
+      display: block;
+      font-weight: normal;
+    }
+
+    .node__more-nodes {
+      fill: $c02-light;
+      font-size: 14px;
+      font-weight: normal;
+      text-decoration: underline;
+    }
+
+    #profile-node {
+      stroke: #FFF;
+    }
+  }
+
+  .node__orbit circle {
+    transition: 0.5s transform;
+  }
+
+  &.node--faded {
+    opacity: 0.4;
+    transition: none;
+  }
+
+  &.node--list-visible {
+    .node__more-nodes {
+      fill: #FFF;
+    }
+  }
+
+  .node__orbit--visible {
+    animation-duration: 1s, 0s;
+    animation-name: node__orbit__show_2, node_fadeIn;
+    opacity: 1;
+    animation-direction: normal;
+  }
+
+  .node__orbit--hidden {
+    animation-direction: reverse;
+    opacity: 0;
+    animation-name: node__orbit__show;
+    animation-fill-mode: both;
+    animation-duration: 0.2s;
+  }
+
+  .node__single-node-view-icon,
+  .node__cluster-state-toggle-icon {
+    cursor: pointer;
+  }
+
+  &.node--has-gateway {
+    .node__orbit,
+    .node__related-node circle {
+      transition: 1s transform;
+      animation-fill-mode: none;
+    }
+
+    .node__orbit--hidden {
+      opacity: 1;
+      animation: none;
+      transform: scale(0.8, 0.8);
+
+      .node__related-node circle {
+        transform: scale(1, 1) translate(0, 0);
+        transform-origin: left;
+      }
+    }
+
+    .node__orbit--visible {
+      animation: none;
+
+      .node__related-node circle {
+        transform: translate(4, 0);
+        transform-origin: left;
+      }
+    }
+  }
+
+  .node__related-node {
+    cursor: pointer;
+    fill: $c01-dark;
+    font-size: 14px;
+    animation: 2s node_fadeIn normal;
+    animation-fill-mode: both;
+    user-select: none;
+
+    &.node__related-node--faded {
+      opacity: 0.3;
+    }
+
+    .node__related-node__node-count {
+      fill: $c01-darkest;
+    }
+
+    .node__related-node__branch-length {
+      font-size: 10px;
+      fill: $c01-light;
+    }
+    
+    .outline, .outline + circle {
+      fill: none;
+      stroke: #fff;
+      stroke-width: 3px;
+    }
+  }
+
+  &.node--menu-visible {
+    .node__center__node-count {
+      fill: transparentize($c02-dark, 0.8);
+    }
+
+    .clusterPath {
+      fill: #434343;
+    }
+
+    .node__more-nodes {
+      fill: transparentize($c02-light, 0.8);
+    }
+
+    .node__center-node circle,
+    .node__related-node,
+    .node__related-node circle,
+    .node__related-node__node-count,
+    .node__orbit {
+      // if transparent, the orbit and link can be seen through the circles
+      fill: #434343;
+    }
+
+    .node__orbit circle {
+      stroke: #434343;
+    }
+
+    .node__orbit .clusterPath {
+      fill: #434343;
+
+      &.outline, &.outline circle {
+        fill: transparent !important;
+        stroke: #434343;
+      }
+    }
+
+    .node__related-node.node__related-node--menu-open {
+      fill: $c01-dark;
+
+      & .node__related-node__node-count {
+        fill: $c01-dark;
+      }
+
+      & circle, .clusterPath {
+        fill: $c01-light;
+      }
+    }
+  }
+
+  &.node--highlight-center {
+    .node__center-node .clusterPath {
+      fill: #434343;
+    }
+    .node__center-node circle,
+    .node__center-node circle.clusterPath {
+      fill: $c01-light;
+    }
+
+  }
+
+  .node__center__node-count {
+    fill: $c02-dark;
+  }
+
+  .node__orbit {
+    transition: 0.5s opacity;
+  }
+
+  &.node--hiding .node__center-node {
+    animation-name: node_fadeIn_2;
+    animation-fill-mode: both;
+    animation-direction: reverse;
+    animation-duration: 0.3s;
+    animation-delay: 0;
+    transform: scale(0.7, 0.7);
+  }
+
+  &.node--hiding .node__orbit--hidden {
+    animation-duration: 0.5s;
+  }
+
+  &.node--hiding.node--has-gateway .node__orbit {
+    transition: 0.5s opacity;
+    animation-fill-mode: both;
+    animation: node__orbit__show_2;
+    animation-duration: 0.5s;
+    animation-direction: reverse;
+    opacity: 0;
+  }
+
+  .node__orbit--hide-children {
+    .node__related-node {
+      animation: node_fadeIn_2;
+      animation-fill-mode: both;
+      animation-duration: 0.7s;
+      animation-direction: reverse;
+    }
+  }
+
+  .node__orbit--disable-animations {
+    .node__related-node {
+      animation: none;
+    }
+  }
+
+  @include duplicateAnimation('node__orbit__show') {
+    0% {
+      transform: scale(0, 0);
+    }
+
+    5% {
+      transform: scale(0.9, 0.9);
+    }
+
+    100% {
+      transform: scale(1, 1);
+    }
+  }
+
+  @include duplicateAnimation('node_fadeIn') {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+}

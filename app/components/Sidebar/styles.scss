@@ -1,0 +1,64 @@
+.sidebar {
+  background: rgb(32, 32, 32);
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 60px;
+  z-index: 2;
+
+  svg {
+    position: absolute;
+    overflow: hidden;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+    width: 60px;
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    overflow: hidden;
+
+    li {
+      list-style-type: none;
+      padding: 0;
+      cursor: pointer;
+      width: 60px;
+      height: 60px;
+      color: rgba(255, 255, 255, 0.6);
+      font-size: 28px;
+
+      a {
+        width: 60px;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &:hover {
+          background-color: #4D4D4D;
+          color: rgba(255, 255, 255, 1);
+        }
+      }
+
+      &.first-on-bottom {
+        margin-top: auto;
+      }
+
+      &.active {
+        color: #FFF;
+      }
+    }
+  }
+
+  .icon {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    stroke-width: 0;
+    stroke: currentColor;
+    fill: currentColor;
+  }
+}

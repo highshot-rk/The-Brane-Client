@@ -1,0 +1,28 @@
+.fixed-path {
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  left: 0;
+  right: 0;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  .fixed-path__main-group {
+    transform: translate(0, 0);
+    transition: 1.5s transform;
+    transition-timing-function: ease-in-out;
+  }
+
+  &.fixed-path--dragging .fixed-path__main-group {
+    transition: none;
+  }
+
+  &.fixed-path--fast-transform .fixed-path__main-group {
+    transition: 1s transform;
+    transition-timing-function: linear;
+  }
+}

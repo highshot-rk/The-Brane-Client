@@ -1,0 +1,13 @@
+/*
+ * To repeat or undo an animation on class change, the animation name needs to be different for each class.
+ * This mixin adds two animations, one with the given name, and a second named givenName_2.
+*/
+@mixin duplicateAnimation($animation_name) {
+  @keyframes #{$animation_name} {
+    @content;
+  }
+
+  @keyframes #{$animation_name}_2 {
+    @content;
+  }
+}

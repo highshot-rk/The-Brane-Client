@@ -1,0 +1,8 @@
+<svg 
+  xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15">
+  <style>.a{stroke-width:2;}</style>
+  <g stroke="#FFF">
+    <path d="M13.6 1.4L1.3 13.6" class="a"/>
+    <path d="M1.3 1.5L13.5 13.7" class="a"/>
+  </g>
+</svg>

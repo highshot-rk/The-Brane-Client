@@ -1,0 +1,6 @@
+/**
+ * Action Types
+ */
+export const AUTH_FILL_PROFILE = 'AUTH/FILL_PROFILE'
+export const AUTH_FILL_FIELDS = 'AUTH/FILL_FIELDS'
+export const ONBOARDING_FINISHED = 'AUTH/ONBOARDING_FINISHED'

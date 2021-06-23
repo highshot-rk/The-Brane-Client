@@ -1,0 +1,48 @@
+extends:
+  - standard
+  - standard-react
+  - plugin:jsx-a11y/recommended
+parser: babel-eslint
+plugins:
+  - react
+  - jsx-a11y
+globals:
+  describe: 0
+  beforeEach: 0
+  it: 0
+  before: 0
+  echo: 0
+  mkdir: 0
+  rm: 0
+  cp: 0
+  exec: 0
+  exit: 0
+  which: 0
+  test: 0
+  System: 0
+  jest: 0
+  expect: 0
+  location: 0
+
+  FormData: 0
+  Blob: 0
+  requestAnimationFrame: 0
+
+rules:
+  comma-dangle: 
+    - 2
+    - "always-multiline"
+
+  # Temporarily set to warning
+  react/prop-types: 1
+  react/jsx-no-bind: 1
+  jsx-a11y/no-static-element-interactions: 1
+  jsx-a11y/alt-text: 1
+  jsx-a11y/anchor-is-valid: 1
+  jsx-a11y/label-has-for: 1
+  jsx-a11y/mouse-events-have-key-events: 1
+
+  # Unlikely to be fixed soon
+  jsx-a11y/no-noninteractive-element-interactions: 0
+  jsx-a11y/click-events-have-key-events: 0
+  jsx-a11y/no-autofocus: 0

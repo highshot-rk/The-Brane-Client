@@ -1,0 +1,22 @@
+language: node_js
+node_js:
+  - 12
+services:
+  - xvfb
+before_install:
+  - npm i -g npm@latest wait-port@0.2.2
+  - export CHROME_BIN=chromium-browser
+  - export DISPLAY=:99.0
+script:
+  - npm run build:dll
+  - npm run storybook -- --quiet &
+  - wait-port 50002 && npm test -- --maxWorkers=4
+  - npm run build
+notifications:
+  email:
+    on_failure: change
+addons:
+after_success:
+  - echo -e "$MUP_SSH_KEY" > ~/.ssh/thebrane
+  - cd deploy && node travis-deploy.js
+cache: npm
